@@ -80,9 +80,6 @@ export async function POST(request: NextRequest) {
           controller.error(new Error("Gateway stream failed."));
         }
       },
-      cancel() {
-        void stream.controller.abort();
-      },
     });
 
     return new Response(responseStream, {
